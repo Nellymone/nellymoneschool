@@ -1,0 +1,114 @@
+body {
+font-size:20px;
+background-color: white;
+color: #0A0F2C;
+font-family: Arial;}
+
+h1 {
+text-align:center;
+font-size: 50px;
+color: white;
+}
+
+h2 {
+text-align: left;
+font-size:40px;}
+
+.logo {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 12px;
+}
+
+.p1 {
+    font-style: italic;
+    background-color: #fdfdfd;
+    border-left: 12px solid transparent;
+    border-image: linear-gradient;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.my_photo {
+width: 500px;
+    height: auto;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.m1{
+text-align:right;
+font-size: 20px;
+font-weight: bold;
+margin-right: 100px;
+}
+
+
+.contacts-info {
+    float: left;
+    width: 260px;
+    background-color: #f7f9fc;
+    padding: 15px 20px;
+    border-left: 5px solid #8ea7e9;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-right: 5px;
+}
+
+h3{
+font-size: 40px;
+text-align: right;
+margin-right: 60px;}
+
+.p2 {
+    font-style: italic;
+    background-color: #fdfdfd;
+    border-right: 20px solid transparent;
+    border-image: linear-gradient;
+    padding: 20px 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.my_photo1 {
+width: 500px;
+    height: auto;
+    float: right;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.p3 {
+    font-style: italic;
+    background-color: #fdfdfd;
+    border-left: 12px solid transparent;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.m2 {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 40px; /* двигай цифру как нужно */
+}
+
+.contacts-info1 {
+    float: right;
+    width: 260px;
+    background-color: #f7f9fc;
+    padding: 15px 20px;
+    border-left: 5px solid #8ea7e9;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #2c3e50;
+    margin-right: 5px;
+}
+.head {
+background-color: rgb(7,1,33);}

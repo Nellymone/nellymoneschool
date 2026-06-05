@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>branches</title>
+    <link rel="stylesheet" href="{% static 'branches.css' %}">
+</head>
+
+<body>
+
+<div class="head">
+    <img class="logo" src="{% static 'gallery/nelly.png' %}" alt="logo">
+    <h1>Մեր մասնաճյուղերը</h1>
+</div>
+
+{% for branch in branches %}
+
+<div class="branch-card">
+
+    <h2>Մասնաճյուղ {{ branch.city }}</h2>
+
+    <p class="p1">
+        {{ branch.description }}
+    </p>
+
+    <img class="my_photo" src="{{ branch.image.url }}" alt="photo">
+
+    <div class="p1">
+        {{ branch.director_text }}
+    </div>
+
+    <p class="m1">{{ branch.director }}</p>
+
+    <p class="contacts-info">
+        Հասցե՝ {{ branch.address }} <br>
+        <a href="tel:{{ branch.phone }}">Հեռ. {{ branch.phone }}</a>
+    </p>
+
+</div>
+
+<div style="clear: both;"></div>
+
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="{% static 'gallery.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<div class="head">
+    <img class="logo" src="{% static 'gallery/nelly.png' %}" alt="logo">
+    <h1>Տեսադարան</h1>
+</div>
+
+<div class="gallery">
+    {% for img in images %}
+        <a href="{{ img.image.url }}" class="img-link">
+            <img src="{{ img.image.url }}" alt="">
+        </a>
+    {% endfor %}
+</div>
+
+</body>
+</html>

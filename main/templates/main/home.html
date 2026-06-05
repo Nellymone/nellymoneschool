@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NellyMone-school</title>
+
+    <link rel="stylesheet" href="{% static 'nellymone.css' %}">
+
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="head">
+
+    <div class="contacts" style="background: #0A0F2C;">
+        <h3>Հետադարձ կապ</h3>
+
+        <div class="contact-info">
+            <div class="contact-line contact-address">Երևան, Բաղրամյան 7</div>
+            <div class="contact-line contact-phone">
+                <a href="tel:+37493541986">+374 93 541 986</a>
+            </div>
+            <div class="contact-line contact-mail">
+                <a href="mailto:nellymoneschool@gmail.com">nellymoneschool@gmail.com</a>
+            </div>
+        </div>
+    </div>
+
+    <img class="logo" src="{% static 'gallery/nelly.png' %}" alt="logo">
+
+    <h1>Nelly Mone<br>Էթիկայի բարձրագույն դպրոց</h1>
+
+</div>
+
+<!-- MENU -->
+<div class="right">
+    <ul>
+        <li><a href="{% url 'branches' %}">Մեր մասնաճյուղերը</a></li>
+        <li><a href="{% url 'training' %}">Համագործակցություն</a></li>
+        <li><a href="{% url 'pictures' %}">Տեսադարան</a></li>
+    </ul>
+</div>
+
+
+<!-- MAIN CONTENT -->
+<main>
+
+<p class="p1">
+    Լեդին և ջենթլմենը,<br>
+    ովքեր այսօր հիացմունք են առաջացնում,<br>
+    երեկ դեռ 4 տարեկան երեխաներ էին:
+</p>
+
+<div class="gallery">
+    <img src="{% static 'gallery/g9.jpg' %}">
+    <img src="{% static 'gallery/g20.jpg' %}">
+    <img src="{% static 'gallery/g21.jpg' %}">
+</div>
+
+<br>
+    <h2>Նորություններ</h2>
+
+<div class="news-container">
+    {% for item in news %}
+        <div class="news-card">
+
+            {% if item.image %}
+                <img src="{{ item.image.url }}" class="news-img">
+            {% endif %}
+
+            <h3 class="news-title">{{ item.title }}</h3>
+            <small class="news-date">{{ item.created_at }}</small>
+            <p class="news-text">{{ item.content|truncatewords:18 }}</p>
+
+        </div>
+    {% endfor %}
+</div>
+
+<h2>Մեր մասին</h2>
+
+<p>
+    Nelly Mone էթիկայի բարձրագույն դպրոցը հանդիսանում է կարևորագույն ուսումնական հաստատություններից մեկը Հայաստանում։
+    Դպրոցը հիմնվել է 2021թ–ին։
+    Դպրոցի հիմնադիր տնօրենը, Էթիկետի էքսպերտ,
+    <span class="underline">Նելլի Մոնեն է:</span>
+</p>
+
+<img class="my_photo" src="{% static 'photos/first.jpg' %}">
+
+<p>
+    Իր գործունեության ընթացքում դպրոցը ունեցել է բազմաթիվ շրջանավարտներ,
+    ովքեր փայլում են իրենց վարվեցողությամբ և նրբագեղությամբ:
+</p>
+
+<div class="text-block">
+    <p>Մեր դպրոցում գործում է ուսուցում նախատեսված հետևյալ տարիքային խմբերի համար՝</p>
+    <ul>
+        <li>5-10 տարեկան երեխաներ</li>
+        <li>11-17 տարեկան դեռահասներ</li>
+        <li>18+ կանայք և աղջիկներ</li>
+    </ul>
+</div>
+
+<p>
+    Դասընթացի ընթացքում մասնակիցներին հնարավորություն է ընձեռնվում
+    մասնակցելու ոչ միայն տեսական դասընթացների,
+    այլ նաև master class-երի։
+    <br>
+    Դպրոցի կողմից կազմակերպվող master class-երը թույլ են տալիս երեխաներին յուրացնել  թեման, կիրառել ստացած գիտելիքները և ձևավորել արժանապատիվ պահվածք հասարակության մեջ:
+    <br><br>
+    <span class="underline">Այսօրվա երեխան մեր վաղվա ապագան է:</span>
+</p>
+<br><br><br>
+<h2>Դպրոցի ուսումնական ծրագրերը</h2>
+
+<div class="p1">
+<ul>
+    <li><a href="{% url 'page2' %}">Փոքրիկ լեդիներ և ջենթլմեններ</a></li>
+    <li><a href="{% url 'page3' %}">Դեռահաս լեդիներ և ջենթլմեններ</a></li>
+    <li><a href="{% url 'group' %}">Խմբակային այցեր</a></li>
+    <li><a href="{% url 'training' %}">Վերապատրաստում</a></li>
+</ul>
+</div>
+
+<div class="gallery">
+    <img src="{% static 'gallery/g1.jpg' %}">
+    <img src="{% static 'gallery/g4.jpg' %}">
+    <img src="{% static 'gallery/g5.jpg' %}">
+</div>
+
+<!-- messages -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="flash-message">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+
+<!-- FORM -->
+<section class="enroll-section">
+    <h2>Գրանցվել դասընթացին</h2>
+
+    <form method="post" class="enroll-form">
+        {% csrf_token %}
+
+        <label>Անուն</label>
+        {{ form.name }}
+
+        <label>Տարիք</label>
+        {{ form.age }}
+
+        <label>Հեռախոս</label>
+        {{ form.phone }}
+
+        <label>Email</label>
+        {{ form.email }}
+
+       <input type="submit" value="Ուղարկել">
+    </form>
+</section>
+
+</main>
+
+
+</body>
+</html>
