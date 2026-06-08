@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-ocda!jtn)$vcdbw*c@))5i_1)7dtw2-#g#d_$b9l_w61d=&a#0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "nellymoneschool.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
